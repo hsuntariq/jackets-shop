@@ -113,3 +113,11 @@ footer {
     color: white;
     background-color: black;
 }
+
+.slider::-webkit-scrollbar {
+  width: 5px;               /* width of the entire scrollbar */
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background: yellow;        /* color of the tracking area */
+}

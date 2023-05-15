@@ -74,38 +74,38 @@
             </div>
             <div class="category-items container-fluid">
                 <div class="row mt-2">
-                    <div class="col-lg-3 pic" style="position:relative">
-                        <img width="100%" src="http://impetus.pk/pictures/categories/1_pic_1.jpg" alt="">
+                    <div class="col-lg-3 animate pic" style="position:relative">
+                        <img style="object-fit:cover" height="300px" width="100%" src="http://impetus.pk/pictures/categories/1_pic_1.jpg" alt="">
                         <div class="overlay text-uppercase text-center">
                             <h1>vintage leather jacket</h1>
                         </div>
                     </div>
-                    <div class="col-lg-3 pic" style="position:relative">
-                        <img width="100%" src="http://impetus.pk/pictures/categories/1_pic_1.jpg" alt="">
+                    <div class="col-lg-3 animate pic" style="position:relative">
+                        <img style="object-fit:cover" height="300px" width="100%" src="https://theleatherjackets.com/wp-content/uploads/2021/02/Untitled-1-300x300.jpg" alt="">
                         <div class="overlay text-uppercase text-center">
                             <h1>vintage leather jacket</h1>
                         </div>
                     </div>
-                    <div class="col-lg-3 pic" style="position:relative">
-                        <img width="100%" src="http://impetus.pk/pictures/categories/1_pic_1.jpg" alt="">
+                    <div class="col-lg-3 animate pic" style="position:relative">
+                        <img style="object-fit:cover" height="300px" width="100%" src="https://i.pinimg.com/736x/39/27/87/39278713c5b8916927f0920c92651ed0.jpg" alt="">
                         <div class="overlay text-uppercase text-center">
                             <h1>vintage leather jacket</h1>
                         </div>
                     </div>
-                    <div class="col-lg-3 pic" style="position:relative">
-                        <img width="100%" src="http://impetus.pk/pictures/categories/1_pic_1.jpg" alt="">
+                    <div class="col-lg-3 animate pic" style="position:relative">
+                        <img style="object-fit:cover" height="300px" width="100%" src="https://theleatherjackets.com/wp-content/uploads/2021/01/Yellow-and-Blue-slim-fit-Biker-Leather-jacket-for-men-4.webp" alt="">
                         <div class="overlay text-uppercase text-center">
                             <h1>vintage leather jacket</h1>
                         </div>
                     </div>
-                    <div class="col-lg-3 pic" style="position:relative">
-                        <img width="100%" src="http://impetus.pk/pictures/categories/1_pic_1.jpg" alt="">
+                    <div class="col-lg-3 animate pic" style="position:relative">
+                        <img style="object-fit:cover" height="300px" width="100%" src="http://impetus.pk/pictures/categories/1_pic_1.jpg" alt="">
                         <div class="overlay text-uppercase text-center">
                             <h1>vintage leather jacket</h1>
                         </div>
                     </div>
-                    <div class="col-lg-3 pic" style="position:relative">
-                        <img width="100%" src="http://impetus.pk/pictures/categories/1_pic_1.jpg" alt="">
+                    <div class="col-lg-3 animate pic" style="position:relative">
+                        <img style="object-fit:cover" height="300px" width="100%" src="https://jasirleathers.com/wp-content/uploads/2019/08/Women-Biker-Leather-Jacket-back.png" alt="">
                         <div class="overlay text-uppercase text-center">
                             <h1>vintage leather jacket</h1>
                         </div>
@@ -121,6 +121,32 @@
                     <li class="page-item"><a class="page-link" href="#">Next</a></li>
                 </ul>
             </nav>
+        </section>
+        <section class="slider d-flex" style="overflow-x:scroll">
+            <div class="col-4">
+                <img width="100%" src="https://i.pinimg.com/736x/39/27/87/39278713c5b8916927f0920c92651ed0.jpg" alt="">
+            </div>
+            <div class="col-4">
+                <img width="100%" src="https://i.pinimg.com/736x/39/27/87/39278713c5b8916927f0920c92651ed0.jpg" alt="">
+            </div>
+            <div class="col-4">
+                <img width="100%" src="https://i.pinimg.com/736x/39/27/87/39278713c5b8916927f0920c92651ed0.jpg" alt="">
+            </div>
+            <div class="col-4">
+                <img width="100%" src="https://i.pinimg.com/736x/39/27/87/39278713c5b8916927f0920c92651ed0.jpg" alt="">
+            </div>
+            <div class="col-4">
+                <img width="100%" src="https://i.pinimg.com/736x/39/27/87/39278713c5b8916927f0920c92651ed0.jpg" alt="">
+            </div>
+            <div class="col-4">
+                <img width="100%" src="https://i.pinimg.com/736x/39/27/87/39278713c5b8916927f0920c92651ed0.jpg" alt="">
+            </div>
+            <div class="col-4">
+                <img width="100%" src="https://i.pinimg.com/736x/39/27/87/39278713c5b8916927f0920c92651ed0.jpg" alt="">
+            </div>
+            <div class="col-4">
+                <img width="100%" src="https://i.pinimg.com/736x/39/27/87/39278713c5b8916927f0920c92651ed0.jpg" alt="">
+            </div>
         </section>
         <section class="catalogue bg-light" style="width:100vw">
             <div class="row col-lg-8 m-auto justify-content-center">
@@ -204,10 +230,24 @@
         </footer>
 
 
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
         <?php 
         include '../assets/bootstrap_js.php'
     ?>
+    <script>
+        gsap.from('.animate',{
+            duration:2,
+            y:20,
+            opacity:0,
+            stagger:0.2
+        })
+        gsap.from('.category-title',{
+            duration:2,
+            x:20,
+            opacity:0,
+            stagger:0.2
+        })
+    </script>
     </body>
 
 </html>
