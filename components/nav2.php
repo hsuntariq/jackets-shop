@@ -1,10 +1,9 @@
-<header class="" style="background-color: black!important;">
-    <p class="text-light m-0 text-center p-2 text-right d-flex justify-content-end">
-        info@shengg.pk /
+<header style="background-color: black!important;">
+    <p class=" m-0 text-center p-2 text-right d-flex justify-content-end"> info@shengg.pk /
         +92-511-22338</p>
 </header>
-<nav class="mb-5 mx-auto myNav navbar navbar-expand-lg d-flex justify-content-between"
-    style="width:80%;left:10%;position:fixed;top:35px;z-index:222;background-color:rgb(235, 235, 235);margin:auto;border-radius:60px">
+<nav class="myNav navbar navbar-expand-lg d-flex justify-content-around"
+    style="width:80%;z-index:222;background-color:rgb(235, 235, 235);margin:auto;border-radius:60px">
     <div style="position:relative;" class="navbar-brand p-0 d-flex justify-content-center align-items-center">
         <div class="image">
             <img width="50px" src="../assets/images/logo-removebg-preview.png" style="transform: scale(1.2);" alt="">
@@ -18,7 +17,7 @@
     </div>
     <ul class="m-auto my-list" style="list-style:none">
         <li class="nav-items">
-            <a style="font-weight: 600;" href="" class="nav-link active">Home</a>
+            <a style="font-weight: 600;" href="../User/HomeView.php" class="nav-link active">Home</a>
         </li>
         <li class="nav-items">
             <a style="font-weight: 600;" href="../User/AboutUs.php" class="nav-link">About Us</a>
