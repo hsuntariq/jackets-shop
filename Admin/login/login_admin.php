@@ -9,7 +9,7 @@ if(mysqli_num_rows($result) > 0){
     while($row = mysqli_fetch_assoc($result)){
         session_start();
         $_SESSION['username'] = $row['username'];
-        $_SESSION['success_message'] = 'Welcome ';
+        $_SESSION['success_message'] = '';
         header('Location: http://localhost/Client_project/Admin/addProduct/addProduct.php');
     }
     }else{

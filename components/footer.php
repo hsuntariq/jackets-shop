@@ -3,11 +3,11 @@
 				<div class="col-md-8 p-3">
 					<h2>SIGN UP TO OUR NEWSLETTER</h2>
 					<p>Product launches, expedition updates, event news.</p>
-					<form action="">
-						<div class="input-group">
-							<input type="text" class="form-control" name="signup" placeholder="Your Email...">
+					<form action="../User/send-mail-footer.php" method="POST">
+						<div class="input-group d-flex mb-3">
+							<input type="text" class="form-control" name="email" placeholder="Your Email...">
 							<span class="my-btn">
-								<button class="btn btn-default" type="submit" value="send" name="submit">submit</button>
+								<button style="background-color: #e29338;" class="btn btn-default" type="submit" value="send" name="submit">submit</button>
 							</span>
 						</div>
 					</form>
@@ -17,12 +17,18 @@
 						</div>
 						<div class="col-8">
 							<p>
-								This company registered in 1993 and start operational working in 1995. It�s family
-								based
-								company as tradition here in Pakistan. From First day, we concentrate on motorbike
-								industry as we understand that there�s still potential in this industry and we can
-								get
-								our part.
+								<?php
+									
+                            include '../Admin/config/connect.php';
+                            $select = 'SELECT footer_text FROM `contact`';
+                            
+                            $result = mysqli_query($connection, $select);
+								if (mysqli_num_rows($result) > 0) {
+									while ($row = mysqli_fetch_assoc($result)) {
+										echo $row['footer_text'];
+									}
+								}
+								?>
 							</p>
 						</div>
 					</div>

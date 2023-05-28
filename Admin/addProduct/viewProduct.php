@@ -33,8 +33,12 @@
         <div class="container-fluid">
             <div class="row" style="height:100vh">
                 <?php
+                session_start();
+                include '../check/check.php';
                 include '../assets/sidebar.php';
-
+                if(isset($_SESSION['delete'])){
+                echo "<div style='position:fixed;right:0;top:0;z-index:33' class='bg-success text-light col-8 col-sm-3 p-3 test'>". $_SESSION['delete'] . "</div>";
+                }
                 ?>
                 <div class="col-sm-9">
                     <h1 class="display-3 d-flex justify-content-center font-weight-medium" style="color: #F29221;">
@@ -51,7 +55,6 @@
                                 <th scope="col">category</th>
                                 <th scope="col">SubCategory</th>
                                 <th scope="col">Image</th>
-                                <th scope="col">Update</th>
                                 <th scope="col">Delete</th>
                             </tr>
                         </thead>
@@ -73,17 +76,13 @@
                                 <td><?php echo $row['category']?></td>
                                 <td><?php echo $row['s_category']?></td>
                                 <td>
-                                    <img width="50px" height="50px" src="../assets/images/<?php echo $row['image']?>" alt="">
+                                    <img width="50px" height="50px" src="../assets/images/<?php echo $row['image']?>"
+                                        alt="">
                                 </td>
                                 <td>
-                                    <button class="btn btn-primary">
-                                        Update
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger">
+                                    <a href="./delete.php?id=<?php echo $row['id']?>" class="btn btn-danger">
                                         Delete
-                                    </button>
+                                    </a>
                                 </td>
 
                             </tr>
@@ -99,7 +98,19 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
+        <script>
+            let test = document.querySelector('.test');
+            setTimeout(() => {
+                test.style.transition = 'all 0.7s'
+                test.style.transform = 'translateX(100%)'
 
+            }, 1000)
+        </script>
+        <?php
+        if(isset($_SESSION['success_message'])){
+            unset($_SESSION['success_message']);
+        }
+        ?>
     </body>
 
 

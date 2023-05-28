@@ -23,8 +23,7 @@
             <a style="font-weight: 600;" href="../User/AboutUs.php" class="nav-link">About Us</a>
         </li>
         <li class="nav-items">
-            <a style="font-weight: 600;" href="" class="nav-link">Our Products</a>
-        </li>
+            <a style="font-weight: 600;" href="../User/products.php" class="nav-link">Our Products</a> </li>
         <li class="nav-items">
             <a style="font-weight: 600;" href="../User/catalogue.php" class="nav-link">Catalogue</a>
         </li>

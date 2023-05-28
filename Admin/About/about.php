@@ -11,6 +11,8 @@
 
     <body>
         <?php
+        session_start();
+                include '../check/check.php';
                 include '../assets/sidebar.php';
                     if(isset($_SESSION['message'])){
                         echo "<div style='position:fixed;right:0;top:0;z-index:33' class='bg-success text-light col-8 col-sm-3 p-3 test'>". $_SESSION['message'] . "</div>";
@@ -33,10 +35,16 @@
             </div>
         </div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-                crossorigin="anonymous">
-            </script>
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+        <script>
+            let test = document.querySelector('.test');
+            setTimeout(() => {
+                test.style.transition = 'all 0.7s'
+                test.style.transform = 'translateX(100%)'
 
+            }, 1000)
+        </script>
     </body>
 
 

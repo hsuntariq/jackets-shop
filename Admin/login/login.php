@@ -38,7 +38,7 @@
                     <label for="">Username</label>
                 <input class="form-control" type="text" name="username" placeholder="Please enter your username">
                 <label for="">Password</label>
-                <input class="form-control" type="text" name="password" placeholder="Please enter your username">
+                <input class="form-control" type="password" name="password" placeholder="Please enter your password">
                 <input name="post-data" type="submit" value="Add Product" class="form-control my-3 btn"
                             style="background-color: #F29221;">
             </form>
@@ -53,7 +53,9 @@
                 
             },1000)
         </script>
-
+        <?php
+        unset($_SESSION['err_message']);
+        ?>
     </body>
 
 </html>

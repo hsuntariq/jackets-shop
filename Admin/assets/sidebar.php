@@ -8,14 +8,7 @@
                     <i class="bi bi-power"></i>
                 </a>
             </div>
-            <div class="d-flex align-items-center" style="gap:1rem">
-                <div class="icon" style="font-size:2rem">
-                    <i class="bi bi-person-circle"></i>
-                </div>
-                <div class="text">
-                    <a href="">Name</a>
-                </div>
-            </div>
+            
             <div class="d-flex align-items-center" style="gap:1rem">
                 <div class="icon" style="font-size:2rem">
                     <i class="bi bi-house"></i>
@@ -25,13 +18,21 @@
                 </div>
             </div>
             <div class="d-flex align-items-center" style="gap:1rem">
+                <div class="icon" style="font-size:2rem">
+                    <i class="bi bi-journal-album"></i>
+                </div>
+                <div class="text">
+                    <a href="">Update Catalogue</a>
+                </div>
+            </div>
+            <div class="d-flex align-items-center" style="gap:1rem">
                 <div class="icon" style="font-size:2rem"><i class="bi bi-file-person"></i></div>
                 <div class="text">
                     <a href="../About/about.php">Change About</a>
                 </div>
             </div>
             <div class="d-flex align-items-center" style="gap:1rem">
-                <div class="icon" style="font-size:2rem"><i class="bi bi-file-person"></i></div>
+                <div class="icon" style="font-size:2rem"><i class="bi bi-collection"></i></div>
                 <div class="text">
                     <a href="../category/category.php">Add Category</a>
                 </div>
@@ -67,7 +68,7 @@
             <div class="d-flex align-items-center" style="gap:1rem">
                 <div class="icon" style="font-size:2rem"><i class="bi bi-images"></i></div>
                 <div class="text">
-                    <a href="../slider/slider_images.php">Update Slider</a>
+                    <a href="../slider/slider_images.php">Update Slider Images</a>
                 </div>
             </div>
             <div class="d-flex align-items-center" style="gap:1rem">

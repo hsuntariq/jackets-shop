@@ -45,9 +45,10 @@
             session_start();
             if(isset($_SESSION['message'])){
                 echo "<div style='position:fixed;right:0;top:0;z-index:33' class='bg-success text-light col-8 col-sm-3 p-3 test'>". $_SESSION['message'] . "</div>";
-                }
-            include '../assets/sidebar.php';
+            }
             include '../config/connect.php';
+            include '../check/check.php';
+            include '../assets/sidebar.php';
             ?>
         <div class="col-sm-9 form">
             <h1 class="display-3 d-flex justify-content-center font-weight-medium" style="color: #F29221;">
@@ -63,15 +64,15 @@
                 <textarea name="info" class="form-control" id="" cols="30" rows="5"></textarea>
                 <label for="">Product Category</label>
                 <select class="form-control" name="category" id="">
-                <option value="Choose">Choose Category</option>
+                    <option value="Choose">Choose Category</option>
                     <?php
                     include '../../Admin/config/connect.php';
-                $select = "SELECT * FROM category";
+                $select = "SELECT DISTINCT name FROM category";
                 $result = mysqli_query($connection,$select);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         ?>
-                    <option value="<?php echo $row['id']?>">
+                    <option value="<?php echo $row['name']?>">
                         <?php echo $row['name']?>
                     </option>
                     <?php
@@ -81,15 +82,15 @@
                 </select>
                 <label for="">Sub Category</label>
                 <select class="form-control" name="s_category" id="">
-                <option value="Choose">Choose Category</option>
+                    <option value="Choose">Choose Category</option>
                     <?php
                     include '../../Admin/config/connect.php';
-                $select = "SELECT * FROM sub_category";
+                $select = "SELECT DISTINCT name FROM sub_category";
                 $result = mysqli_query($connection,$select);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         ?>
-                    <option value="<?php echo $row['id']?>">
+                    <option value="<?php echo $row['name']?>">
                         <?php echo $row['name']?>
                     </option>
                     <?php
@@ -119,11 +120,6 @@
 
             }, 1000)
         </script>
-        <?php
-                    // session_start();
-                    session_unset();
-                    session_destroy()
-                ?>
     </body>
 
 

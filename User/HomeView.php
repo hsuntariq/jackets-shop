@@ -146,30 +146,113 @@
 			</div>
 			<div class="category-items grid-parent container-fluid mb-3">
 				<div class="row m-auto justify-content-center" style="font-size:0rem !important">
-					<div class="child child1 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
-							<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
-								src="https://helliford.com/uploads/categories/sports-wear_63CD27_cthumb.png" alt="">
-						</div>
-						<div class="child child2 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
-							<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
-								src="https://helliford.com/uploads/categories/fitness-wear_A1956C_cthumb.png" alt="">
-						</div>
-						<div class="child child3 col-sm-6 col-12 mb-3 col-lg-6 col-md-6">
-							<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
-								src="https://helliford.com/uploads/categories/accessories_563A1E_cthumb.png" alt="">
-						</div>
-						<div class="child child4 col-sm-6 col-12 mb-3 col-lg-6 col-md-6">
-							<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
-								src="https://helliford.com/uploads/products/accessories/bags/hfi-1010_pimg1.jpg" alt="">
-						</div>
-						<div class="child child5 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
-							<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
-								src="https://helliford.com/assets/images/sr3.png" alt="">
-						</div>
-						<div class="child child6 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
-							<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
-								src="https://helliford.com/assets/images/sr2.png" alt="">
-						</div>
+					<?php
+	include '../Admin/config/connect.php';
+	$limit = 6; // Number of items to display per page
+
+	// Get the total number of rows
+	$countQuery = "SELECT COUNT(*) as total FROM category";
+	$countResult = mysqli_query($connection, $countQuery);
+	$countRow = mysqli_fetch_assoc($countResult);
+	$totalItems = $countRow['total'];
+
+	// Calculate the total number of pages
+	$totalPages = ceil($totalItems / $limit);
+
+	// Get the current page number
+	if (isset($_GET['page'])) {
+		$page = $_GET['page'];
+	} else {
+		$page = 1;
+	}
+
+	// Calculate the offset for the SQL query
+	$offset = ($page - 1) * $limit;
+
+	$select = "SELECT * FROM category LIMIT $offset, $limit";
+	$res = mysqli_query($connection, $select);
+	if (mysqli_num_rows($res) > 0) {
+		$i = 0;
+		while ($row = mysqli_fetch_array($res)) {
+			$products[] = $row;
+		}
+			?>
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child<?php echo ($i+1); ?> col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
+							alt="">
+							
+					</a>
+					<?php $i++?>
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child2 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
+							alt="">">
+					</a>
+					<?php $i++?>
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child3 col-sm-6 col-12 mb-3 col-lg-6 col-md-6">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
+							alt="">>
+					</a>
+					<?php $i++?>
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child4 col-sm-6 col-12 mb-3 col-lg-6 col-md-6">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
+							alt="">alt="">
+					</a>
+					<?php $i++?>
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child5 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
+							alt="">
+					</a>
+					<?php $i++?>
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child6 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
+							alt="">
+					</a>
+					<?php $i++?>
+
+		// Display pagination links
+		<?php 
+		echo "<ul class='pagination'>";
+			for ($pageNum = 1; $pageNum <= $totalPages; $pageNum++) {
+			echo "<li><a style='font-size:1.7rem;color:#e29338' href='?page=$pageNum'>$pageNum</a></li>";
+		}
+		echo "</ul>";
+	} else {
+		echo "<h4 class='text-danger display-2 text-center'>No categories to display</h4>";
+	}
+			?>
+?>
+
+
+					<!-- <div class=" child child1 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="https://helliford.com/uploads/categories/sports-wear_63CD27_cthumb.png" alt="">
+					</div>
+					<div class="child child2 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="https://helliford.com/uploads/categories/fitness-wear_A1956C_cthumb.png" alt="">
+					</div>
+					<div class="child child3 col-sm-6 col-12 mb-3 col-lg-6 col-md-6">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="https://helliford.com/uploads/categories/accessories_563A1E_cthumb.png" alt="">
+					</div>
+					<div class="child child4 col-sm-6 col-12 mb-3 col-lg-6 col-md-6">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="https://helliford.com/uploads/products/accessories/bags/hfi-1010_pimg1.jpg" alt="">
+					</div>
+					<div class="child child5 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="https://helliford.com/assets/images/sr3.png" alt="">
+					</div>
+					<div class="child child6 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
+							src="https://helliford.com/assets/images/sr2.png" alt="">
+					</div> -->
 				</div>
 			</div>
 
@@ -220,10 +303,9 @@
 			</h3>
 			<hr class='underline m-auto'>
 			<p class="text-secondary text-center mt-2">
-				Every day more people discover our wide range of Motorbike Clothing.
 			</p>
 		</div>
-		
+
 		<?php
 
 		include '../components/footer.php';

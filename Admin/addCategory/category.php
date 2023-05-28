@@ -46,6 +46,7 @@
             if(isset($_SESSION['message'])){
                 echo "<div style='position:fixed;right:0;top:0;z-index:33' class='bg-success text-light col-8 col-sm-3 p-3 test'>". $_SESSION['message'] . "</div>";
                 }
+        include '../check/check.php';
             include '../assets/sidebar.php';
             include '../config/connect.php';
             ?>
@@ -119,11 +120,6 @@
 
             }, 1000)
         </script>
-        <?php
-                    // session_start();
-                    session_unset();
-                    session_destroy()
-                ?>
     </body>
 
 

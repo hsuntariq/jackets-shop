@@ -40,9 +40,10 @@
 
         </div>
         <?php
+        $name = $_GET['name'];
         $id = $_GET['id'];
         include '../Admin/config/connect.php';
-        $select = "SELECT * FROM product WHERE id = {$id}";
+        $select = "SELECT * FROM product JOIN category ON product.category = category.name WHERE category.name = '{$name}' AND category.id = $id";
         $result = mysqli_query($connection, $select);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -58,9 +59,9 @@
 
                     <div class="col-lg-6 border p-4">
                         <img class="d-flex m-auto" width="300px" height="300px"
-                            src="../Admin/assets/images/<?php echo $row['image']?>" alt="">
+                            src="../Admin/assets/images/<?php echo $row['c_image']?>" alt="">
                     </div>
-                    <input name="image" type="hidden" style value="<?php echo $row['image']?>" />
+                    <input name="c_image" type="hidden" style value="<?php echo $row['image']?>" />
 
                     <div class="col-lg-6">
                         <h2 style="font-weight:800">

@@ -6,7 +6,7 @@ session_start();
             if(isset($_FILES['image'])){
                 $fileName = $_FILES['image']['name'];
                 $tmp_name = $_FILES['image']['tmp_name'];
-                move_uploaded_file($tmp_name, '../../assets/images/' . $fileName);
+                move_uploaded_file($tmp_name, '../assets/images/' . $fileName);
             }
             $insert = "INSERT INTO `category`(`name`, `c_image`) VALUES ('{$name}','{$fileName}')";
             mysqli_query($connection,$insert);

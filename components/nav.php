@@ -16,7 +16,7 @@
             </h3>
         </div>
     </div>
-    <ul class="m-auto my-list" style="list-style:none">
+    <ul class="m-auto my-list align-items-center" style="margin-right:4rem !important;list-style:none;">
         <li class="nav-items">
             <a style="font-weight: 600;" href="" class="nav-link active">Home</a>
         </li>
@@ -24,7 +24,7 @@
             <a style="font-weight: 600;" href="../User/AboutUs.php" class="nav-link">About Us</a>
         </li>
         <li class="nav-items">
-            <a style="font-weight: 600;" href="" class="nav-link">Our Products</a>
+            <a style="font-weight: 600;" href="../User/products.php" class="nav-link">Our Products</a>
         </li>
         <li class="nav-items">
             <a style="font-weight: 600;" href="../User/catalogue.php" class="nav-link">Catalogue</a>
@@ -32,6 +32,27 @@
         <li class="nav-items">
             <a style="font-weight: 600;" href="../User/ContactUs.php" class="nav-link">Contact us</a>
         </li>
+        <li class="dropdown d-flex align-self-center p-3">
+                    <a style="color:#E49234;font-weight: 600;height:100%" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Categories
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <?php
+                        include '../Admin/config/connect.php';
+                        $select = "SELECT DISTINCT name FROM category";
+                        $result = mysqli_query($connection, $select);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                                ?>
+                            <li><a class="dropdown-item" href="../User/category.php?name=<?php echo $row['name']?>"><?php echo $row['name']?></a></li>
+                        <?php }
+                        }?>
+                        <!-- <li><a class="dropdown-item" href="../contact/social_contact.php">Update Social Media</a></li>
+                        <li><a class="dropdown-item" href="../contact/contact.php">Update Other Contacts</a></li> -->
+                    </ul>
+                </li>
         <li class="nav-items " style="clip-path:circle();position:relative">
             <a style="font-weight: 800;z-index:22222;background-color:#E49234;color:black;font-size:1.8rem"
                 href="../User/myCart.php" class="nav-link"><i class="bi bi-cart-dash text-dark"></i></a>
@@ -47,6 +68,7 @@
                 ?>
             </h5>
         </li>
+        
     </ul>
     <div class="menu" style="font-size: 2rem;cursor:pointer">
         <i class="bi bi-list"></i>

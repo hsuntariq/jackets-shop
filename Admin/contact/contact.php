@@ -14,11 +14,12 @@
             <div class="row" style="height:100vh">
                 <?php
                     session_start();
+                    include '../check/check.php';
                     include '../assets/sidebar.php';
                     if(isset($_SESSION['success'])){
                 echo "<div style='position:fixed;right:0;top:0;z-index:33' class='bg-success text-light col-8 col-sm-3 p-3 test'>". $_SESSION['success'] . "</div>";
                 }
-if(isset($_SESSION['err'])){
+                if(isset($_SESSION['err'])){
                 echo "<div style='position:fixed;right:0;top:0;z-index:33' class='bg-danger text-light col-8 col-sm-3 p-3 test'>". $_SESSION['err'] . "</div>";
                 }
                 
@@ -38,6 +39,9 @@ if(isset($_SESSION['err'])){
                             <label for="">Update Address</label>
                             <input class="form-control" type="test" placeholder="please enter updated Address"
                                 name="address">
+                            <label for="">Update Footer about</label>
+                            <input class="form-control" type="test" placeholder="please enter updated Footer Text"
+                                name="footer">
                             <label for="">Update Office Hours</label>
                             <input class="form-control" type="time" placeholder="please enter updated opening time"
                                 name="o_hour">
