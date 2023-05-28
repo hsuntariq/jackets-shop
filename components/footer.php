@@ -13,7 +13,7 @@
 					</form>
 					<div class="row">
 						<div class="col-4">
-							<!-- <img width="100%" src="../assets/images/logo-removebg-preview.png" alt=""> -->
+							<img width="100%" src="../assets/images/logo-removebg-preview.png" alt="">
 						</div>
 						<div class="col-8">
 							<p>

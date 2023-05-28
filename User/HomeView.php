@@ -177,46 +177,52 @@
 			$products[] = $row;
 		}
 			?>
-					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child<?php echo ($i+1); ?> col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>"
+						class="child child<?php echo ($i+1); ?> col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
 						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
 							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
 							alt="">
-							
+
 					</a>
 					<?php $i++?>
-					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child2 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>"
+						class="child child2 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
 						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
 							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
 							alt="">">
 					</a>
 					<?php $i++?>
-					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child3 col-sm-6 col-12 mb-3 col-lg-6 col-md-6">
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>"
+						class="child child3 col-sm-6 col-12 mb-3 col-lg-6 col-md-6">
 						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
 							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
 							alt="">>
 					</a>
 					<?php $i++?>
-					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child4 col-sm-6 col-12 mb-3 col-lg-6 col-md-6">
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>"
+						class="child child4 col-sm-6 col-12 mb-3 col-lg-6 col-md-6">
 						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
 							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
 							alt="">alt="">
 					</a>
 					<?php $i++?>
-					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child5 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>"
+						class="child child5 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
 						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
 							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
 							alt="">
 					</a>
 					<?php $i++?>
-					<a href="./category.php?name=<?php echo $products[$i]['name']?>" class="child child6 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
+					<a href="./category.php?name=<?php echo $products[$i]['name']?>"
+						class="child child6 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
 						<img width="100%" class="" height="250px" style="object-fit:cover;border-radius:20px"
 							src="<?php echo isset($products[$i]['c_image']) ? '../Admin/assets/images/'.$products[$i]['c_image'] : '../Admin/assets/images/skeleton-loading.gif'; ?>"
 							alt="">
 					</a>
 					<?php $i++?>
 
-		// Display pagination links
-		<?php 
+					// Display pagination links
+					<?php 
 		echo "<ul class='pagination'>";
 			for ($pageNum = 1; $pageNum <= $totalPages; $pageNum++) {
 			echo "<li><a style='font-size:1.7rem;color:#e29338' href='?page=$pageNum'>$pageNum</a></li>";
@@ -226,7 +232,7 @@
 		echo "<h4 class='text-danger display-2 text-center'>No categories to display</h4>";
 	}
 			?>
-?>
+					?>
 
 
 					<!-- <div class=" child child1 col-sm-6 col-12 mb-3 col-lg-3 col-md-3">
@@ -311,6 +317,15 @@
 		include '../components/footer.php';
 		include '../assets/bootstrap_js.php'
 	?>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+		</script>
 		<script>
 			let nav = document.querySelector('.myNav');
 			let cards = document.querySelector('.slider')

@@ -31,108 +31,39 @@
             include '../components/sidebar.php';
             include '../components/nav2.php'
         ?>
-        <section class="catalogue bg-light" style="width:100vw">
+        <section class="catalogu bg-light" style="width:100vw">
             <div class="bg-image">
 
             </div>
             <div class="catalogue-into d-flex justify-content-center align-item-center flex-column">
                 <h1 class="text-center" style="color:#F29221">CATALOGUE</h1>
+                <?php
+                    include '../Admin/config/connect.php';
+                    $select = "SELECT * FROM catalogue";
+                $result = mysqli_query($connection, $select);
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        ?>
                 <p class="text-secondary text-center col-lg-5 ml-auto fs-3" style="line-height:1.5;font-size:1.2rem">
-                    A library catalog or library catalogue
-                    is a register of all bibliographic items
-                    found in a library or group of libraries,
-                    such as a network of libraries at several
-                    locations.
+                    <?php echo $row['catalogue_description']?>
                 </p>
             </div>
             <div class="row col-lg-8 m-auto align-item-center justify-content-center">
                 <div class="col-md-6">
                     <img width="100%" height="80%" style="object-fit:cover"
-                        src="https://helliford.com/assets/images/video.png" alt="">
+                        src="../Admin/assets/images/<?php echo $row['image1']?>" alt="">
                 </div>
                 <div class="col-md-6">
-                    <img width="100%" height="80%" src="../assets/images/jacket-removebg-preview.png" alt="">
+                    <img width="100%" height="80%" src="../Admin/assets/images/<?php echo $row['image2']?>"  alt="">
                 </div>
             </div>
+            <?php
+                    }
+                }?>
         </section>
-<footer class="p-3">
-            <div class="row">
-                <div class="col-md-8 p-3">
-                    <h2>SIGN UP TO OUR NEWSLETTER</h2>
-                    <p>Product launches, expedition updates, event news.</p>
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="signup" placeholder="Your Email...">
-                            <span class="my-btn">
-                                <button class="btn btn-default" type="submit" value="send" name="submit">submit</button>
-                            </span>
-                        </div>
-                    </form>
-                    <div class="row">
-                        <div class="col-4">
-                            <img width="100%" src="../assets/images/logo-removebg-preview.png" alt="">
-                        </div>
-                        <div class="col-8">
-                            <p>
-                                This company registered in 1993 and start operational working in 1995. It�s family based
-                                company as tradition here in Pakistan. From First day, we concentrate on motorbike
-                                industry as we understand that there�s still potential in this industry and we can get
-                                our part.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 p-3 text-capitalize">
-                    <h3>Follow us</h3>
-                    <p>You can select any social link</p>
-                    <div class="row icons d-flex justify-content-around">
-							<?php
-							include '../Admin/config/connect.php';
-							$select = "SELECT * FROM contact_social";
-							$result = mysqli_query($connection,$select);
-							while ($row = mysqli_fetch_assoc($result)) {
-								?>
-							<a class="text-light" href="<?php echo $row['facebook']?>" class="col-2"><i class="bi bi-facebook"></i></a>
-							<a class="text-light" href="<?php echo $row['twitter']?>" class="col-2"><i class="bi bi-twitter"></i></a>
-							<a class="text-light" href="<?php echo $row['google']?>" class="col-2"><i class="bi bi-google"></i></a>
-							<a class="text-light" href="<?php echo $row['instagram']?>" class="col-2"><i class="bi bi-instagram"></i></a>
-							<a class="text-light" href="<?php echo $row['pintrest']?>" class="col-2"><i class="bi bi-pinterest"></i></a>
-							<a class="text-light" href="<?php echo $row['linkedin']?>" class="col-2"><i class="bi bi-linkedin"></i></a>
-							<?php
-							}
-							?>
-						</div>
-                    <h3>contact us</h3>
-                    <h6>address</h6>
-                    <?php
-							include '../Admin/config/connect.php';
-							$select = "SELECT * FROM contact";
-							$result = mysqli_query($connection,$select);
-							while ($row = mysqli_fetch_assoc($result)) {
-								?>
-                    <h6 class="text-secondary">
-                        <?php echo $row['address']?>
-                    </h6>
-                    </h6>
-                    <h6>
-                        Email
-                    </h6>
-                    <h6 class="text-secondary">
-                        <?php echo $row['email']?>
-                    </h6>
-                    <h6>
-                        Phone
-                    </h6>
-                    <h6 class="text-secondary">
-                        <?php echo $row['phone']?>
-                    </h6>
-
-                    <?php
-							}
-							?>
-                </div>
-            </div>
-        </footer>
+        <?php
+        include '../components/footer.php';
+        ?>
     </body>
 
 </html>

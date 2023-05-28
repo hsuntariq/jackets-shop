@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row" style="height:100vh">
-        <div class="col-sm-3 p-0" style="background-color: #F29221">
+        <div class="col-md-3 p-0" style="background-color: #F29221">
             <div class="d-flex align-items-center" style="background-color: #B86506">
                 <img width="50px" src="../../assets/images/logo-removebg-preview.png" alt="">
                 <h5>Sheeny Enginnering</h5>
@@ -9,6 +9,14 @@
                 </a>
             </div>
             
+            <div class="d-flex align-items-center" style="gap:1rem">
+                <div class="icon" style="font-size:2rem">
+                    <i class="bi bi-person"></i>
+                </div>
+                <div class="text">
+                    <a href="../login/update_user.php">User</a>
+                </div>
+            </div>
             <div class="d-flex align-items-center" style="gap:1rem">
                 <div class="icon" style="font-size:2rem">
                     <i class="bi bi-house"></i>
@@ -22,7 +30,7 @@
                     <i class="bi bi-journal-album"></i>
                 </div>
                 <div class="text">
-                    <a href="">Update Catalogue</a>
+                    <a href="../catalogue/catalogue.php">Update Catalogue</a>
                 </div>
             </div>
             <div class="d-flex align-items-center" style="gap:1rem">

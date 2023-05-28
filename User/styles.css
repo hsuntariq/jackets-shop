@@ -83,11 +83,6 @@
 
             }
 
-            .catalogue {
-                background-image: url('http://impetus.pk/images/cata_img.png');
-                background-size: cover;
-                background-position: center center;
-            }
 
             .feature-product {
                 background: radial-gradient(circle, #F29221, #da9343);
