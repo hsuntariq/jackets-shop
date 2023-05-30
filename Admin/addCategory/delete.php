@@ -6,5 +6,5 @@ mysqli_query($connection, $delete);
 session_start();
 
     $SESSION['delete'] = 'Successfully Deleted';
-    header("Location: http://localhost/Client_project/Admin/slider/slider_images.php");
+    header("Location: http://{$hostname}/Client_project/Admin/slider/slider_images.php");
 ?>

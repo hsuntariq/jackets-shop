@@ -8,7 +8,7 @@ if(isset($_POST['add-to-cart'])){
     $info = $_POST['info'];
     $quantity = $_POST['quantity'];
     $_SESSION['cart'][] = array('image' => $image, 'name' => $name, 'price' => $price,'info'=>$info, 'quantity' => $quantity);
-    header('Location: http://localhost/Client_project/User/myCart.php');
+    header("Location: http://{$hostname}/Client_project/User/myCart.php");
     $_SESSION['message'] = 'Added To cart!';
 }
 ?>

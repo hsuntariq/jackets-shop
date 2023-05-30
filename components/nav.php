@@ -6,15 +6,15 @@
 <nav class="mb-5 mx-auto myNav navbar navbar-expand-lg d-flex justify-content-between"
     style="width:80%;left:10%;position:fixed;top:35px;z-index:222;background-color:rgb(235, 235, 235);margin:auto;border-radius:60px">
     <div style="position:relative;" class="navbar-brand p-0 d-flex justify-content-center align-items-center">
-        <div class="image">
+        <a href='../User/HomeView.php' class="image">
             <img width="50px" src="../assets/images/logo-removebg-preview.png" style="transform: scale(1.2);" alt="">
-        </div>
-        <div class="text-brand" style="position:absolute; left:100%;top:-40%">
+        </a>
+        <a href='../User/HomeView.php' class="text-brand text-decoration-none" style="position:absolute; left:100%;top:-40%">
             <h3 style="font-weight:800">
                 <span class="d-flex align-self-center" style="color:#e29338">Sheeny</span>
                 <span class="d-flex align-self-center" style="color:#0c1e36;font-size:1.5rem"> International</span>
             </h3>
-        </div>
+</a>
     </div>
     <ul class="m-auto my-list align-items-center" style="margin-right:4rem !important;list-style:none;">
         <li class="nav-items">

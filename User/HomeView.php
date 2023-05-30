@@ -335,7 +335,7 @@
 				nav.style.trasnition = 'all 0.9s'
 				if (y > 1) {
 					nav.style.transition = 'all 0.4s'
-					nav.style.transform = 'translateY(-35px)'
+					nav.style.transform = 'translateY(-27px)'
 				}
 				if (y <= 2) {
 					nav.style.transition = 'all 0.4s'

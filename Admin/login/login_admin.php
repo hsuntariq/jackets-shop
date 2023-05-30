@@ -10,12 +10,12 @@ if(mysqli_num_rows($result) > 0){
         session_start();
         $_SESSION['username'] = $row['username'];
         $_SESSION['success_message'] = '';
-        header('Location: http://localhost/Client_project/Admin/addProduct/addProduct.php');
+        header("Location: http://{$hostname}/Client_project/Admin/addProduct/addProduct.php");
     }
     }else{
         session_start();
         $_SESSION['err_message'] = 'Invalid Credentials';
-        header('Location: http://localhost/Client_project/Admin/login/login.php');
+        header("Location: http://{$hostname}/Client_project/Admin/login/login.php");
 }
 
 ?>

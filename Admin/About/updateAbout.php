@@ -6,6 +6,6 @@ $update = "UPDATE `about` SET,`about`='{$about}'";
 $result = mysqli_query($connection, $update);
 if($result){
     $_SESSION['success_message'] = 'Updated Successfully';
-    header('Location: http://localhost/Client_project/Admin/About/about.php');
+    header("Location: http://{$hostname}/Client_project/Admin/About/about.php");
 }
 ?>

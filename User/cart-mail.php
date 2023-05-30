@@ -85,7 +85,7 @@ $myMessage = "
 
 $mail->Body = $myMessage;
 $mail->send();
-header("Location: http://localhost/Client_project/User/myCart.php");
+header("Location: http://{$hostname}/Client_project/User/myCart.php");
 $_SESSION['success'] = 'Message Successfully Sent';
 exit();
 ?>

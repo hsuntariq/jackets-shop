@@ -1,3 +1,7 @@
+<?php
+        session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +36,6 @@
 
     <body>
         <?php
-        session_start();
         if(isset($_SESSION['success'])){
                 echo "<div style='position:fixed;right:0;top:0;z-index:33' class='bg-success text-light col-8 col-sm-3 p-3 test'>". $_SESSION['success'] . "</div>";
             }

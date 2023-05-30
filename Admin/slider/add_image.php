@@ -10,5 +10,5 @@ session_start();
 mysqli_query($connection, $insert);
 $_SESSION['message'] = 'Record inserted Successfully';
 
-header('Location: http://localhost/Client_project/Admin/slider/slider_images.php');
+header("Location: http://{$hostname}/Client_project/Admin/slider/slider_images.php");
 ?>

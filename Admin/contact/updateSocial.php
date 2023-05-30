@@ -12,10 +12,10 @@ $result = mysqli_query($connection,$insert);
 if($result){
     session_start();
     $_SESSION['success'] = 'Contacts successfully updated';
-    header('Location: http://localhost/Client_project/Admin/contact/social_contact.php');
+    header("Location: http://{$hostname}/Client_project/Admin/contact/social_contact.php");
 } else {
     session_start();
     $_SESSION['err'] = 'An Error Occured';
-header('Location: http://localhost/Client_project/Admin/contact/social_contact.php');
+header("Location: http://{$hostname}/Client_project/Admin/contact/social_contact.php");
 }
 ?>

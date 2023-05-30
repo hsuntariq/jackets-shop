@@ -1,3 +1,4 @@
 <?php
-$connection = mysqli_connect("localhost", "root", "", "sheeny_engineering");
+$hostname = 'localhost';
+$connection = mysqli_connect("{$hostname}", "root", "", "sheeny_engineering");
 ?>

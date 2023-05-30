@@ -15,5 +15,5 @@ session_start();
             mysqli_query($connection,$insert2);
             $_SESSION['message'] = 'Record inserted Successfully';
 
-        header('Location: http://localhost/Client_project/Admin/category/category.php');
+        header("Location: http://{$hostname}/Client_project/Admin/category/category.php");
         ?>

@@ -25,7 +25,7 @@ $myMessage = "<div>
 </div>";
 $mail->Body = $myMessage;
 $mail->send();
-header("Location: http://localhost/Client_project/User/ContactUs.php");
+header("Location: http://{$hostname}/Client_project/User/ContactUs.php");
 session_start();
 $_SESSION['success'] = 'Message Successfully Sent';
 ?>
